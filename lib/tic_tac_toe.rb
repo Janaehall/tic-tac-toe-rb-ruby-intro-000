@@ -9,6 +9,18 @@ WIN_COMBINATIONS = [
   [2,5,8]
 ].freeze
 
+
+def play(board)
+  turn(board) until over?(board)
+  if won?(board)
+      puts "Congratulations #{winner(board)}!"
+  elsif draw?(board)
+      puts "Cat's Game!"
+  end
+end
+
+
+
 def display_board(board)
   puts (" #{board[0]} | #{board[1]} | #{board[2]} ")
   puts ("-----------")
